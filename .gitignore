@@ -10,7 +10,6 @@ node_modules/
 
 # User-supplied reference materials
 /helpers/*
-!/helpers/.gitkeep
 
 # Local environment settings (keep a shareable example)
 .env
