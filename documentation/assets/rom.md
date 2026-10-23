@@ -1,0 +1,1 @@
+The five SVG references are extracted unchanged from the supplied rom.zip. They guide the single shared assessment. Front views capture both sides; squat and forward fold use separate left/right side views for landmark visibility.

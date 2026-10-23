@@ -1,0 +1,1401 @@
+{
+  "schemaVersion": 1,
+  "status": "reference_catalog_only_not_connected_to_app",
+  "sourcePriority": "Use NCERT performance instructions and do/dont guidance over conflicting archive images. Routine memberships come from the user, not efficacy claims from this catalog.",
+  "interpretation": {
+    "idealMeaning": "A textbook-aligned geometric reference for the selected variant; not a clinically validated healthy range of motion or a safety threshold.",
+    "degreesNullMeaning": "The source describes this position qualitatively and does not justify a single numeric ideal. Null is not zero; do not score it or silently substitute a number.",
+    "geometricTranslationMeaning": "A numeric consequence of idealized straight/perpendicular/parallel segments. Not a number explicitly printed in NCERT, and not a demand to force end-range joints.",
+    "bothSidesMeaning": "Whether the selected pose variant is performed once per left/right side, one after the other. This does not describe camera views or calibration sides.",
+    "roles": "For asymmetric poses resolve raised/supporting/resting and upper/lower roles from the currently practiced side. Never duplicate an active-leg angle onto the supporting leg.",
+    "measurement": "Interior joint angles are 0-180 degrees and use aspect-corrected 2D coordinates in the indicated plane. They differ from clinical flexion/extension angles. Front and side views are not interchangeable.",
+    "futureScoring": "No personal targets, tolerances or calibration are defined here. Some metrics improve by increasing (extension); others by decreasing (interior hip angle during a leg raise). Non-angular relations are also needed.",
+    "unmeasurable": "Standard Pose Landmarker joints do not directly measure spinal curvature, cervical ROM, pain, breathing, relaxation, muscle engagement, toe grip or palm contact."
+  },
+  "angleDefinitions": {
+    "shoulder": {
+      "kind": "interior_joint_angle",
+      "landmarks": [
+        "same_side_hip",
+        "same_side_shoulder",
+        "same_side_elbow"
+      ],
+      "vertex": "shoulder",
+      "meaning": "0: upper arm along torso toward hip; 180: upper arm extending away from hip along torso axis."
+    },
+    "elbow": {
+      "kind": "interior_joint_angle",
+      "landmarks": [
+        "same_side_shoulder",
+        "same_side_elbow",
+        "same_side_wrist"
+      ],
+      "vertex": "elbow",
+      "meaning": "180: straight elbow; lower values: more bend."
+    },
+    "hip": {
+      "kind": "interior_joint_angle",
+      "landmarks": [
+        "same_side_shoulder",
+        "same_side_hip",
+        "same_side_knee"
+      ],
+      "vertex": "hip",
+      "meaning": "180: aligned torso/thigh; 90: perpendicular torso/thigh. Shoulder-to-hip is a trunk proxy, not the anatomical pelvic axis."
+    },
+    "knee": {
+      "kind": "interior_joint_angle",
+      "landmarks": [
+        "same_side_hip",
+        "same_side_knee",
+        "same_side_ankle"
+      ],
+      "vertex": "knee",
+      "meaning": "180: straight knee; lower values: more bend."
+    },
+    "ankle": {
+      "kind": "interior_joint_angle",
+      "landmarks": [
+        "same_side_knee",
+        "same_side_ankle",
+        "same_side_foot_index"
+      ],
+      "vertex": "ankle",
+      "meaning": "Shin-to-forefoot proxy; not clinical ankle ROM."
+    },
+    "legElevationFromFloor": {
+      "kind": "segment_to_floor_angle",
+      "landmarks": [
+        "same_side_hip",
+        "same_side_ankle"
+      ],
+      "meaning": "0: straight leg along floor; 90: vertical leg. Use hip-to-ankle with a straight-knee check and an established floor direction; not knee angle."
+    },
+    "torsoElevationFromFloor": {
+      "kind": "segment_to_floor_angle",
+      "landmarks": [
+        "midpoint_of_hips",
+        "midpoint_of_shoulders"
+      ],
+      "meaning": "0: trunk along floor; 90: upright trunk. Use a visible same-side torso proxy only when both sides cannot be tracked; not a spinal angle."
+    },
+    "torsoTiltFromVertical": {
+      "kind": "segment_to_vertical_angle",
+      "landmarks": [
+        "midpoint_of_hips",
+        "midpoint_of_shoulders"
+      ],
+      "meaning": "0: upright trunk; greater values: increasing lean. Lateral bend requires front view and a separate forward/backward lean check."
+    },
+    "armSeparation": {
+      "kind": "angle_between_direction_vectors",
+      "landmarks": [
+        "left_shoulder",
+        "left_elbow",
+        "right_shoulder",
+        "right_elbow"
+      ],
+      "meaning": "Angle between left shoulder-to-elbow and right shoulder-to-elbow vectors; 180: opposite directions; 90: perpendicular directions."
+    },
+    "neckExtension": {
+      "kind": "not_directly_observable",
+      "landmarks": null,
+      "meaning": "Clinical cervical extension is not available directly from standard pose landmarks. No numerical target is inferred."
+    }
+  },
+  "routines": [
+    {
+      "id": "concentration",
+      "label": "Concentration",
+      "poseIds": [
+        "vrikshasana",
+        "vajrasana"
+      ]
+    },
+    {
+      "id": "relaxation",
+      "label": "Relaxation",
+      "poseIds": [
+        "makarasana",
+        "shavasana"
+      ]
+    },
+    {
+      "id": "leg_strength",
+      "label": "Leg strength (thighs/knees/ankles)",
+      "poseIds": [
+        "tadasana",
+        "vrikshasana",
+        "vajrasana",
+        "ardhashalabhasana",
+        "ardhahalasana"
+      ]
+    },
+    {
+      "id": "neck_strength",
+      "label": "Neck strength",
+      "poseIds": [
+        "niralamba_bhujangasana",
+        "trikonasana",
+        "hastottanasana"
+      ]
+    },
+    {
+      "id": "back_spine_strength",
+      "label": "Back/spine strength",
+      "poseIds": [
+        "niralamba_bhujangasana",
+        "trikonasana",
+        "hastottanasana",
+        "paschimottanasana"
+      ]
+    },
+    {
+      "id": "abdominal_strength",
+      "label": "Abdominal strength",
+      "poseIds": [
+        "uttanapadasana",
+        "ardhashalabhasana",
+        "paschimottanasana",
+        "ardhahalasana",
+        "naukasana"
+      ]
+    }
+  ],
+  "poses": [
+    {
+      "id": "tadasana",
+      "name": "Tadasana",
+      "variant": "NCERT palm-tree posture: overhead parallel arms, raised heels",
+      "requiresBothSides": false,
+      "sideRequirement": {
+        "basis": "symmetric_final_pose",
+        "rationale": "Both arms stretch and both heels rise together; no separate left/right repetition."
+      },
+      "source": {
+        "textbook": {
+          "path": "/home/Kartik/Documents/yoga_ncert.pdf",
+          "printedPages": [
+            17,
+            18
+          ],
+          "pdfPages": [
+            31,
+            32
+          ]
+        },
+        "referenceImage": {
+          "archive": "/home/Kartik/Pictures/yoga_poses.zip",
+          "entry": "yoga_poses/tadasana.png"
+        }
+      },
+      "idealAngles": {
+        "shoulder": {
+          "degrees": 180,
+          "definition": "shoulder",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Upper arms are aligned with the upright torso, beside the ears."
+        },
+        "elbow": {
+          "degrees": 180,
+          "definition": "elbow",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Fully stretched arms."
+        },
+        "hip": {
+          "degrees": 180,
+          "definition": "hip",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Erect body with no forward or backward bend."
+        },
+        "knee": {
+          "degrees": 180,
+          "definition": "knee",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Straight standing legs."
+        },
+        "torsoTilt": {
+          "degrees": 0,
+          "definition": "torsoTiltFromVertical",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Head, neck and body stay vertically aligned."
+        },
+        "ankle": {
+          "degrees": null,
+          "definition": "ankle",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Heel elevation is required, but the book sets no plantar-flexion angle; lift height depends on comfortable capacity."
+        }
+      },
+      "postureRules": [
+        "Keep feet together, arms parallel overhead and palms facing each other.",
+        "Raise both heels and balance on the toes without bending the torso.",
+        "Lower the heels before lowering the arms."
+      ],
+      "notes": [
+        "This catalog follows NCERT. The existing app uses the earlier palms-together, heels-grounded image variant and is not changed.",
+        "180-degree alignment is a geometric reference, not an instruction to force or lock a joint."
+      ]
+    },
+    {
+      "id": "vrikshasana",
+      "name": "Vrikshasana",
+      "variant": "Overhead prayer, with one foot against the opposite inner thigh",
+      "requiresBothSides": true,
+      "sideRequirement": {
+        "basis": "textbook_explicit",
+        "rationale": "After right-leg placement and release, step 5 explicitly repeats using the left leg."
+      },
+      "source": {
+        "textbook": {
+          "path": "/home/Kartik/Documents/yoga_ncert.pdf",
+          "printedPages": [
+            18,
+            19,
+            20
+          ],
+          "pdfPages": [
+            32,
+            33,
+            34
+          ]
+        },
+        "referenceImage": {
+          "archive": "/home/Kartik/Pictures/yoga_poses.zip",
+          "entry": "yoga_poses/vrikshasana.jpg"
+        }
+      },
+      "idealAngles": {
+        "shoulder": {
+          "degrees": 180,
+          "definition": "shoulder",
+          "appliesTo": "both",
+          "preferredView": "front",
+          "basis": "geometric_translation",
+          "rationale": "Overhead-arm variation extends both arms upward."
+        },
+        "elbow": {
+          "degrees": 180,
+          "definition": "elbow",
+          "appliesTo": "both",
+          "preferredView": "front",
+          "basis": "geometric_translation",
+          "rationale": "Straight overhead arms in the supplied reference."
+        },
+        "supportingHip": {
+          "degrees": 180,
+          "definition": "hip",
+          "appliesTo": "supporting_leg",
+          "preferredView": "front",
+          "basis": "geometric_translation",
+          "rationale": "Standing support side stays erect."
+        },
+        "supportingKnee": {
+          "degrees": 180,
+          "definition": "knee",
+          "appliesTo": "supporting_leg",
+          "preferredView": "front",
+          "basis": "geometric_translation",
+          "rationale": "Supporting leg is straight."
+        },
+        "raisedHip": {
+          "degrees": null,
+          "definition": "hip",
+          "appliesTo": "raised_leg",
+          "preferredView": "front",
+          "basis": "not_numerically_specified",
+          "rationale": "The raised thigh opens outward; the book does not give an abduction or flexion degree."
+        },
+        "raisedKnee": {
+          "degrees": null,
+          "definition": "knee",
+          "appliesTo": "raised_leg",
+          "preferredView": "front",
+          "basis": "not_numerically_specified",
+          "rationale": "Bend sufficiently to place the sole high on the opposite inner thigh. Foot height and body proportions change this angle."
+        },
+        "torsoTilt": {
+          "degrees": 0,
+          "definition": "torsoTiltFromVertical",
+          "appliesTo": "both",
+          "preferredView": "front",
+          "basis": "geometric_translation",
+          "rationale": "The final posture should not bend the body."
+        }
+      },
+      "postureRules": [
+        "Place the sole of the lifted foot against the inside of the opposite thigh, with heel up and toes down.",
+        "Keep the torso upright, join palms overhead, and look at a fixed point.",
+        "Release and repeat with the other leg."
+      ],
+      "notes": [
+        "The textbook also allows prayer hands at the chest. Its arm angles differ from the overhead variant.",
+        "The elbow alignment for overhead prayer is inferred from the reference variant, not an explicit degree in the text."
+      ],
+      "alternativeVariants": [
+        {
+          "id": "prayer_at_chest",
+          "requiresBothSides": true,
+          "idealAngleOverrides": {
+            "shoulder": {
+              "degrees": null,
+              "definition": "shoulder",
+              "appliesTo": "both",
+              "preferredView": "front",
+              "basis": "not_numerically_specified",
+              "rationale": "Hands joined at the chest; no fixed shoulder angle is specified."
+            },
+            "elbow": {
+              "degrees": null,
+              "definition": "elbow",
+              "appliesTo": "both",
+              "preferredView": "front",
+              "basis": "not_numerically_specified",
+              "rationale": "Elbows bend to join palms at the chest; no exact angle is specified."
+            }
+          },
+          "postureRule": "Join palms in front of the chest instead of overhead; leg and torso rules remain the same."
+        }
+      ]
+    },
+    {
+      "id": "vajrasana",
+      "name": "Vajrasana",
+      "variant": "Kneeling seat, buttocks supported by heels",
+      "requiresBothSides": false,
+      "sideRequirement": {
+        "basis": "symmetric_final_pose",
+        "rationale": "Legs are folded one at a time to enter a single bilateral seated posture. Entry order is not separate left/right practice."
+      },
+      "source": {
+        "textbook": {
+          "path": "/home/Kartik/Documents/yoga_ncert.pdf",
+          "printedPages": [
+            22,
+            23
+          ],
+          "pdfPages": [
+            36,
+            37
+          ]
+        },
+        "referenceImage": {
+          "archive": "/home/Kartik/Pictures/yoga_poses.zip",
+          "entry": "yoga_poses/vajrasana.jpg"
+        }
+      },
+      "idealAngles": {
+        "hip": {
+          "degrees": 90,
+          "definition": "hip",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "An erect torso above approximately horizontal thighs gives a right angle in the idealized side-view geometry."
+        },
+        "knee": {
+          "degrees": null,
+          "definition": "knee",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Knees are deeply folded, but thigh/calf contact and proportions determine the interior angle; the book supplies no degree."
+        },
+        "shoulder": {
+          "degrees": null,
+          "definition": "shoulder",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Hands rest on the knees; exact shoulder placement depends on arm and thigh length."
+        },
+        "elbow": {
+          "degrees": null,
+          "definition": "elbow",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Hands rest on the knees; neither a fixed elbow degree nor locked elbows is required."
+        },
+        "ankle": {
+          "degrees": null,
+          "definition": "ankle",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Feet sit beneath the buttocks with heels outside and toes arranged as described; no ankle angle is specified."
+        },
+        "torsoTilt": {
+          "degrees": 0,
+          "definition": "torsoTiltFromVertical",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Spine erect without forward or backward bend."
+        }
+      },
+      "postureRules": [
+        "Fold both legs beneath you and rest the buttocks on/between the heels as described in the textbook.",
+        "Keep the hands on the respective knees and the spine upright.",
+        "Arrange heels outside and big toes overlapping; gaze forward or close the eyes."
+      ],
+      "notes": [
+        "The 90-degree hip value is idealized segment geometry; it is not a clinical hip-flexion measurement."
+      ]
+    },
+    {
+      "id": "makarasana",
+      "name": "Makarasana",
+      "variant": "Prone relaxation, head resting on crossed arms",
+      "requiresBothSides": false,
+      "sideRequirement": {
+        "basis": "symmetric_final_pose",
+        "rationale": "Both arms form a cushion and both legs relax together; no side-specific repetition."
+      },
+      "source": {
+        "textbook": {
+          "path": "/home/Kartik/Documents/yoga_ncert.pdf",
+          "printedPages": [
+            30,
+            31
+          ],
+          "pdfPages": [
+            44,
+            45
+          ]
+        },
+        "referenceImage": {
+          "archive": "/home/Kartik/Pictures/yoga_poses.zip",
+          "entry": "yoga_poses/makarasana.jpg"
+        }
+      },
+      "idealAngles": {
+        "knee": {
+          "degrees": 180,
+          "definition": "knee",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Legs extend while resting on the floor; keep the limbs relaxed rather than forcing extension."
+        },
+        "hip": {
+          "degrees": null,
+          "definition": "hip",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Legs are spread at a comfortable distance. A frontal hip angle changes with that spread; the text fixes no angle."
+        },
+        "shoulder": {
+          "degrees": null,
+          "definition": "shoulder",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Hands hold opposite shoulders to form a cushion; the precise shoulder angle is not specified."
+        },
+        "elbow": {
+          "degrees": null,
+          "definition": "elbow",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Elbows are folded and stacked, or slightly separated if necessary; no exact elbow degree is given."
+        },
+        "torsoElevation": {
+          "degrees": 0,
+          "definition": "torsoElevationFromFloor",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Rest prone on the floor rather than lift into a cobra."
+        }
+      },
+      "postureRules": [
+        "Rest prone with legs comfortably apart, heels inward and toes outward.",
+        "Fold the arms so the hands hold opposite shoulders; rest the head on this cushion.",
+        "Allow slightly separated elbows if stacking is difficult; avoid pressure that makes breathing uncomfortable."
+      ],
+      "notes": [
+        "The supplied image shows a head-on-forearms relaxation variant. The catalog records the textbook crossed-arm instructions.",
+        "Angles cannot establish relaxation or comfortable breathing."
+      ]
+    },
+    {
+      "id": "shavasana",
+      "name": "Shavasana",
+      "variant": "Supine relaxation",
+      "requiresBothSides": false,
+      "sideRequirement": {
+        "basis": "symmetric_final_pose",
+        "rationale": "Whole-body supine relaxation is performed once, not as left/right repetitions."
+      },
+      "source": {
+        "textbook": {
+          "path": "/home/Kartik/Documents/yoga_ncert.pdf",
+          "printedPages": [
+            35,
+            36
+          ],
+          "pdfPages": [
+            49,
+            50
+          ]
+        },
+        "referenceImage": {
+          "archive": "/home/Kartik/Pictures/yoga_poses.zip",
+          "entry": "yoga_poses/shavasana.jpg"
+        }
+      },
+      "idealAngles": {
+        "elbow": {
+          "degrees": 180,
+          "definition": "elbow",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Rest arms extended beside the body; this is a nominal relaxed alignment, not a demand for tension."
+        },
+        "knee": {
+          "degrees": 180,
+          "definition": "knee",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Rest legs extended on the floor without tension."
+        },
+        "hip": {
+          "degrees": null,
+          "definition": "hip",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Legs are comfortably apart. The hip angle depends on spread and viewpoint; the book provides no fixed degree."
+        },
+        "shoulder": {
+          "degrees": null,
+          "definition": "shoulder",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Hands rest about six inches away from the body; this distance does not imply a universal shoulder angle."
+        },
+        "torsoElevation": {
+          "degrees": 0,
+          "definition": "torsoElevationFromFloor",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Back and trunk rest on the floor."
+        }
+      },
+      "postureRules": [
+        "Lie on the back with legs comfortably apart and arms a little away from the body.",
+        "Turn palms upward, allow fingers to relax, and keep the head centered.",
+        "Relax the body and attend to natural breathing."
+      ],
+      "notes": [
+        "180-degree limb values represent nominal extended geometry; relaxed slight bending should not become an error merely because it differs from an exact line.",
+        "Palms, eye closure, breathing and relaxation require additional checks beyond joint angles."
+      ]
+    },
+    {
+      "id": "ardhashalabhasana",
+      "name": "Ardhashalabhasana",
+      "variant": "Prone single-leg lift",
+      "requiresBothSides": true,
+      "sideRequirement": {
+        "basis": "textbook_explicit",
+        "rationale": "Raise and lower the right leg, then repeat with the left leg."
+      },
+      "source": {
+        "textbook": {
+          "path": "/home/Kartik/Documents/yoga_ncert.pdf",
+          "printedPages": [
+            28,
+            29,
+            30
+          ],
+          "pdfPages": [
+            42,
+            43,
+            44
+          ]
+        },
+        "referenceImage": {
+          "archive": "/home/Kartik/Pictures/yoga_poses.zip",
+          "entry": "yoga_poses/Ardhashalabhasana.jpg"
+        }
+      },
+      "idealAngles": {
+        "knee": {
+          "degrees": 180,
+          "definition": "knee",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Do not bend either knee while lifting a leg."
+        },
+        "elbow": {
+          "degrees": 180,
+          "definition": "elbow",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Arms remain extended along the body."
+        },
+        "shoulder": {
+          "degrees": 0,
+          "definition": "shoulder",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Upper arms extend alongside the torso."
+        },
+        "restingHip": {
+          "degrees": 180,
+          "definition": "hip",
+          "appliesTo": "resting_leg",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Resting leg extends in line with the prone torso."
+        },
+        "raisedHip": {
+          "degrees": null,
+          "definition": "hip",
+          "appliesTo": "raised_leg",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Lift to comfortable capacity only while the pelvis remains untilted. No fixed hip-extension angle is supplied."
+        },
+        "raisedLegElevation": {
+          "degrees": null,
+          "definition": "legElevationFromFloor",
+          "appliesTo": "raised_leg",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "The book explicitly limits elevation by pelvic stability, not by a universal degree."
+        },
+        "torsoElevation": {
+          "degrees": 0,
+          "definition": "torsoElevationFromFloor",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Keep the trunk down and chin resting on the floor."
+        }
+      },
+      "postureRules": [
+        "Raise only one straight leg at a time and keep the other leg on the floor.",
+        "Stop the lift before the pelvis tilts; keep the chin down.",
+        "Lower slowly, then repeat on the other side."
+      ],
+      "notes": [
+        "A hip interior angle alone cannot distinguish extension from flexion; prone orientation and upward leg direction must also be checked."
+      ]
+    },
+    {
+      "id": "ardhahalasana",
+      "name": "Ardhahalasana",
+      "variant": "Supine double-leg raise to vertical",
+      "requiresBothSides": false,
+      "sideRequirement": {
+        "basis": "symmetric_final_pose",
+        "rationale": "Both legs lift together through the stages to the final vertical hold."
+      },
+      "source": {
+        "textbook": {
+          "path": "/home/Kartik/Documents/yoga_ncert.pdf",
+          "printedPages": [
+            61,
+            62
+          ],
+          "pdfPages": [
+            75,
+            76
+          ]
+        },
+        "referenceImage": {
+          "archive": "/home/Kartik/Pictures/yoga_poses.zip",
+          "entry": "yoga_poses/Ardhahalasana.jpg"
+        }
+      },
+      "idealAngles": {
+        "legElevation": {
+          "degrees": 90,
+          "definition": "legElevationFromFloor",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "textbook_explicit",
+          "rationale": "Final leg elevation is explicitly 90 degrees."
+        },
+        "hip": {
+          "degrees": 90,
+          "definition": "hip",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "With the torso on the floor and thighs vertical, the shoulder-hip-knee interior angle is 180 - 90 = 90 degrees."
+        },
+        "knee": {
+          "degrees": 180,
+          "definition": "knee",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Legs must remain straight throughout raising and lowering."
+        },
+        "elbow": {
+          "degrees": 180,
+          "definition": "elbow",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Arms extend along the sides with palms on the floor."
+        },
+        "shoulder": {
+          "degrees": 0,
+          "definition": "shoulder",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Arms remain alongside the torso."
+        },
+        "torsoElevation": {
+          "degrees": 0,
+          "definition": "torsoElevationFromFloor",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Keep the trunk supported by the floor."
+        }
+      },
+      "postureRules": [
+        "Keep legs together and straight, hands beside the body and palms on the floor.",
+        "Raise through 30, 45 and 60 degrees to the 90-degree final hold.",
+        "Lower slowly through the same stages without jerks."
+      ],
+      "notes": [
+        "The 30/45/60-degree values describe movement stages, not interchangeable final ideals."
+      ],
+      "movementStages": {
+        "raisingLegElevationDegrees": [
+          30,
+          45,
+          60,
+          90
+        ],
+        "loweringLegElevationDegrees": [
+          60,
+          45,
+          30,
+          0
+        ],
+        "correspondingRaisingHipInteriorDegrees": [
+          150,
+          135,
+          120,
+          90
+        ]
+      }
+    },
+    {
+      "id": "niralamba_bhujangasana",
+      "name": "Niralamba Bhujangasana",
+      "variant": "NCERT forearm-supported cobra with chin resting in palms",
+      "requiresBothSides": false,
+      "sideRequirement": {
+        "basis": "symmetric_final_pose",
+        "rationale": "Both arms support the chest and chin together; there is no alternating side hold."
+      },
+      "source": {
+        "textbook": {
+          "path": "/home/Kartik/Documents/yoga_ncert.pdf",
+          "printedPages": [
+            27,
+            28
+          ],
+          "pdfPages": [
+            41,
+            42
+          ]
+        },
+        "referenceImage": {
+          "archive": "/home/Kartik/Pictures/yoga_poses.zip",
+          "entry": "yoga_poses/niralamba_bhujangasana.jpg"
+        }
+      },
+      "idealAngles": {
+        "knee": {
+          "degrees": 180,
+          "definition": "knee",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Both legs extend together on the floor."
+        },
+        "hip": {
+          "degrees": null,
+          "definition": "hip",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Lift the head and chest up to the navel at comfortable capacity; no numeric back-extension angle is specified."
+        },
+        "shoulder": {
+          "degrees": null,
+          "definition": "shoulder",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Forearms support the raised chest while the hands support the chin. Exact shoulder angle is not specified."
+        },
+        "elbow": {
+          "degrees": null,
+          "definition": "elbow",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Bend elbows and bring wrists together so the chin can rest in the open palms; no exact bend angle is stated."
+        },
+        "torsoElevation": {
+          "degrees": null,
+          "definition": "torsoElevationFromFloor",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Chest lifts with forearm support, but no fixed degree of lift is given."
+        },
+        "neckExtension": {
+          "degrees": null,
+          "definition": "neckExtension",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Head is raised/backward in the described posture, but no cervical angle is specified or measurable directly from standard pose landmarks."
+        }
+      },
+      "postureRules": [
+        "Lie prone with legs extended, heels and toes together.",
+        "Raise the head, neck, shoulders and chest with forearm support, keeping the lower body down.",
+        "Bend elbows, bring wrists together and rest the chin in the open palms.",
+        "Use comfortable capacity without force or jerking."
+      ],
+      "notes": [
+        "The archive image shows a straight-arm, palms-on-floor cobra. It does not match this textbook Niralamba Bhujangasana variant; its elbow angles must not be used as this pose ideal.",
+        "Shoulder-hip-knee geometry is only a rough torso/leg relation, not a measurement of spinal or cervical extension."
+      ]
+    },
+    {
+      "id": "trikonasana",
+      "name": "Trikonasana",
+      "variant": "Lateral bend with lower hand to foot and upper arm upward",
+      "requiresBothSides": true,
+      "sideRequirement": {
+        "basis": "inferred_mirrored_asymmetric_pose",
+        "rationale": "The textbook describes a left bend but does not explicitly instruct a right-side repeat in these steps. Separate mirrored practice is inferred for this asymmetric pose."
+      },
+      "source": {
+        "textbook": {
+          "path": "/home/Kartik/Documents/yoga_ncert.pdf",
+          "printedPages": [
+            48,
+            49,
+            50
+          ],
+          "pdfPages": [
+            62,
+            63,
+            64
+          ]
+        },
+        "referenceImage": {
+          "archive": "/home/Kartik/Pictures/yoga_poses.zip",
+          "entry": "yoga_poses/trikonasana.png"
+        }
+      },
+      "idealAngles": {
+        "elbow": {
+          "degrees": 180,
+          "definition": "elbow",
+          "appliesTo": "both",
+          "preferredView": "front",
+          "basis": "geometric_translation",
+          "rationale": "Arms extend down/up in the standard straight-arm variation."
+        },
+        "knee": {
+          "degrees": 180,
+          "definition": "knee",
+          "appliesTo": "both",
+          "preferredView": "front",
+          "basis": "geometric_translation",
+          "rationale": "The text forbids knee bending during the side bend."
+        },
+        "armSeparation": {
+          "degrees": 180,
+          "definition": "armSeparation",
+          "appliesTo": "arm_pair",
+          "preferredView": "front",
+          "basis": "textbook_explicit",
+          "rationale": "The text explicitly gives 180 degrees between the two extended arms in the standard final posture."
+        },
+        "lowerShoulder": {
+          "degrees": null,
+          "definition": "shoulder",
+          "appliesTo": "lower_arm",
+          "preferredView": "front",
+          "basis": "not_numerically_specified",
+          "rationale": "Shoulder angle depends on torso inclination as the lower hand reaches the foot."
+        },
+        "upperShoulder": {
+          "degrees": null,
+          "definition": "shoulder",
+          "appliesTo": "upper_arm",
+          "preferredView": "front",
+          "basis": "not_numerically_specified",
+          "rationale": "A 180-degree inter-arm angle does not fix the individual shoulder-to-torso angle."
+        },
+        "hip": {
+          "degrees": null,
+          "definition": "hip",
+          "appliesTo": "both",
+          "preferredView": "front",
+          "basis": "not_numerically_specified",
+          "rationale": "Foot spacing, lateral bend and body proportions change each hip angle; no numeric hip value is given."
+        },
+        "torsoTilt": {
+          "degrees": null,
+          "definition": "torsoTiltFromVertical",
+          "appliesTo": "both",
+          "preferredView": "front",
+          "basis": "not_numerically_specified",
+          "rationale": "Bend laterally from the waist within capacity; the textbook does not specify a lateral-bend degree."
+        }
+      },
+      "postureRules": [
+        "Start with feet approximately 1-2 feet apart and arms extended at shoulder height.",
+        "Bend to one side from the waist, lower that hand to the same-side foot, and extend the other arm upward.",
+        "Keep knees straight and avoid leaning forward or backward.",
+        "Return upright; mirror the posture for the other side as the catalog convention."
+      ],
+      "notes": [
+        "requiresBothSides=true is an implementation interpretation here, unlike the explicit alternation in Vrikshasana, Hastottanasana and Ardhashalabhasana.",
+        "Measure arm separation between the upper-arm direction vectors, not the shoulder-elbow-wrist elbow angle."
+      ],
+      "alternativeVariants": [
+        {
+          "id": "upper_arm_reaching_overhead",
+          "requiresBothSides": true,
+          "idealAngleOverrides": {
+            "armSeparation": {
+              "degrees": 90,
+              "definition": "armSeparation",
+              "appliesTo": "arm_pair",
+              "preferredView": "front",
+              "basis": "textbook_explicit",
+              "rationale": "The textbook allows the upper arm to reach toward the bending side, making 90 degrees between the arms."
+            }
+          },
+          "postureRule": "Upper arm reaches toward the side of the bend; do not score this optional variant against the primary 180-degree arm separation."
+        }
+      ]
+    },
+    {
+      "id": "hastottanasana",
+      "name": "Hastottanasana",
+      "variant": "Overhead interlocked hands with alternating lateral bends",
+      "requiresBothSides": true,
+      "sideRequirement": {
+        "basis": "textbook_explicit",
+        "rationale": "After the right-side bend and return to center, step 5 explicitly asks for left-side practice."
+      },
+      "source": {
+        "textbook": {
+          "path": "/home/Kartik/Documents/yoga_ncert.pdf",
+          "printedPages": [
+            47,
+            48
+          ],
+          "pdfPages": [
+            61,
+            62
+          ]
+        },
+        "referenceImage": {
+          "archive": "/home/Kartik/Pictures/yoga_poses.zip",
+          "entry": "yoga_poses/Hastottanasana.jpg"
+        }
+      },
+      "idealAngles": {
+        "elbow": {
+          "degrees": 180,
+          "definition": "elbow",
+          "appliesTo": "both",
+          "preferredView": "front",
+          "basis": "geometric_translation",
+          "rationale": "The text explicitly requires straight arms."
+        },
+        "knee": {
+          "degrees": 180,
+          "definition": "knee",
+          "appliesTo": "both",
+          "preferredView": "front",
+          "basis": "geometric_translation",
+          "rationale": "Standing legs stay extended during the waist bend."
+        },
+        "shoulder": {
+          "degrees": 180,
+          "definition": "shoulder",
+          "appliesTo": "both",
+          "preferredView": "front",
+          "basis": "geometric_translation",
+          "rationale": "Keep upper arms extended overhead along the upper torso in the idealized alignment."
+        },
+        "torsoTilt": {
+          "degrees": null,
+          "definition": "torsoTiltFromVertical",
+          "appliesTo": "both",
+          "preferredView": "front",
+          "basis": "not_numerically_specified",
+          "rationale": "Bend sideways from the waist as far as comfortably possible; the text specifies no lateral-bend degree."
+        },
+        "hip": {
+          "degrees": null,
+          "definition": "hip",
+          "appliesTo": "both",
+          "preferredView": "front",
+          "basis": "not_numerically_specified",
+          "rationale": "Lateral trunk bend changes projected hip angles; the textbook gives no fixed value."
+        }
+      },
+      "postureRules": [
+        "Stand with feet together; raise arms, interlock fingers and turn palms upward.",
+        "Bend from the waist to the right without bending forward or backward.",
+        "Return to center, then repeat the lateral bend to the left."
+      ],
+      "notes": [
+        "The supplied illustration shows feet apart; the textbook starting position specifies feet together.",
+        "This is the textbook side-bending variation, not a generic overhead or backward stretch."
+      ]
+    },
+    {
+      "id": "paschimottanasana",
+      "name": "Paschimottanasana",
+      "variant": "Seated forward fold with straight legs and slightly bent elbows",
+      "requiresBothSides": false,
+      "sideRequirement": {
+        "basis": "symmetric_final_pose",
+        "rationale": "Both legs stay together and the torso folds forward once; no separate left/right posture."
+      },
+      "source": {
+        "textbook": {
+          "path": "/home/Kartik/Documents/yoga_ncert.pdf",
+          "printedPages": [
+            54,
+            55,
+            56
+          ],
+          "pdfPages": [
+            68,
+            69,
+            70
+          ]
+        },
+        "referenceImage": {
+          "archive": "/home/Kartik/Pictures/yoga_poses.zip",
+          "entry": "yoga_poses/Paschimottanasana.jpg"
+        }
+      },
+      "idealAngles": {
+        "knee": {
+          "degrees": 180,
+          "definition": "knee",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Do not bend the knees while folding forward."
+        },
+        "hip": {
+          "degrees": null,
+          "definition": "hip",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Reach forward and try to bring the forehead toward the knees within comfort. Spinal curvature and proportions prevent a universal shoulder-hip-knee ideal."
+        },
+        "shoulder": {
+          "degrees": null,
+          "definition": "shoulder",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Arms reach to the toes with the head between them; exact shoulder angle is not stated."
+        },
+        "elbow": {
+          "degrees": null,
+          "definition": "elbow",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "The text deliberately calls for a little elbow bend, without quantifying it; 180 degrees must not be imposed."
+        },
+        "torsoElevation": {
+          "degrees": null,
+          "definition": "torsoElevationFromFloor",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "A forward fold is required, but neither floor-parallel torso nor a particular torso angle is specified."
+        }
+      },
+      "postureRules": [
+        "Sit with legs extended together and reach forward to hold the toes.",
+        "Keep knees straight, elbows slightly bent, and head between the arms.",
+        "Try to bring the forehead toward the knees without strain or jerks; hold only at a comfortable level."
+      ],
+      "notes": [
+        "Forehead-to-knee and hand-to-toe proximity are useful relational checks; forcing a zero-degree hip angle would not be justified by these instructions."
+      ]
+    },
+    {
+      "id": "uttanapadasana",
+      "name": "Uttanapadasana",
+      "variant": "Dvi-Pada: supine double-leg raise up to 60 degrees",
+      "requiresBothSides": false,
+      "sideRequirement": {
+        "basis": "variant_specific_symmetric_pose",
+        "rationale": "Primary variant lifts both legs simultaneously. The optional Ek-Pada variant requires separate left/right repetitions."
+      },
+      "source": {
+        "textbook": {
+          "path": "/home/Kartik/Documents/yoga_ncert.pdf",
+          "printedPages": [
+            31,
+            32,
+            33
+          ],
+          "pdfPages": [
+            45,
+            46,
+            47
+          ]
+        },
+        "referenceImage": {
+          "archive": "/home/Kartik/Pictures/yoga_poses.zip",
+          "entry": "yoga_poses/Uttanapadasana.jpg"
+        }
+      },
+      "idealAngles": {
+        "legElevation": {
+          "degrees": 60,
+          "definition": "legElevationFromFloor",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "textbook_explicit",
+          "rationale": "The final elevation described by NCERT is up to 60 degrees, after 30- and 45-degree stages."
+        },
+        "hip": {
+          "degrees": 120,
+          "definition": "hip",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "With the trunk down, the interior hip angle is 180 - 60 = 120 degrees, not 60 degrees."
+        },
+        "knee": {
+          "degrees": 180,
+          "definition": "knee",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Do not bend the knees during the raise."
+        },
+        "elbow": {
+          "degrees": 180,
+          "definition": "elbow",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Arms extend along the body, palms on the floor."
+        },
+        "shoulder": {
+          "degrees": 0,
+          "definition": "shoulder",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Arms remain alongside the torso."
+        },
+        "torsoElevation": {
+          "degrees": 0,
+          "definition": "torsoElevationFromFloor",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "Trunk and head remain on the floor."
+        }
+      },
+      "postureRules": [
+        "Lie on the back with legs together, arms beside the body and palms on the floor.",
+        "Raise both straight legs through 30 and 45 degrees to 60 degrees while keeping the trunk down.",
+        "Lower slowly through 45 and 30 degrees to the floor."
+      ],
+      "notes": [
+        "The supplied image shows approximately vertical legs (90 degrees), which conflicts with the textbook endpoint. The catalog uses 60 degrees.",
+        "requiresBothSides applies to the chosen variant; do not reuse the false flag for single-leg practice."
+      ],
+      "movementStages": {
+        "raisingLegElevationDegrees": [
+          30,
+          45,
+          60
+        ],
+        "loweringLegElevationDegrees": [
+          45,
+          30,
+          0
+        ],
+        "correspondingRaisingHipInteriorDegrees": [
+          150,
+          135,
+          120
+        ]
+      },
+      "alternativeVariants": [
+        {
+          "id": "ek_pada",
+          "requiresBothSides": true,
+          "sideRequirement": {
+            "basis": "textbook_explicit",
+            "rationale": "The text raises/lowers the left leg and explicitly repeats with the right leg."
+          },
+          "idealAngleOverrides": {
+            "legElevation": {
+              "degrees": 60,
+              "definition": "legElevationFromFloor",
+              "appliesTo": "raised_leg",
+              "preferredView": "side",
+              "basis": "textbook_explicit",
+              "rationale": "Single raised leg progresses up to 60 degrees."
+            },
+            "hip": {
+              "degrees": 120,
+              "definition": "hip",
+              "appliesTo": "raised_leg",
+              "preferredView": "side",
+              "basis": "geometric_translation",
+              "rationale": "Raised-side interior hip angle is 180 - 60 = 120 degrees."
+            },
+            "restingHip": {
+              "degrees": 180,
+              "definition": "hip",
+              "appliesTo": "resting_leg",
+              "preferredView": "side",
+              "basis": "geometric_translation",
+              "rationale": "The resting leg stays extended along the floor."
+            }
+          },
+          "postureRule": "Lift one straight leg while the other remains down, release, then repeat with the other leg."
+        }
+      ]
+    },
+    {
+      "id": "naukasana",
+      "name": "Naukasana",
+      "variant": "NCERT supine boat with straight legs",
+      "requiresBothSides": false,
+      "sideRequirement": {
+        "basis": "symmetric_final_pose",
+        "rationale": "The legs and trunk rise together; no separate side-specific repetition."
+      },
+      "source": {
+        "textbook": {
+          "path": "/home/Kartik/Documents/yoga_ncert.pdf",
+          "printedPages": [
+            84,
+            85
+          ],
+          "pdfPages": [
+            98,
+            99
+          ]
+        },
+        "referenceImage": {
+          "archive": "/home/Kartik/Pictures/yoga_poses.zip",
+          "entry": "yoga_poses/Naukasana.jpg"
+        }
+      },
+      "idealAngles": {
+        "torsoElevation": {
+          "degrees": 45,
+          "definition": "torsoElevationFromFloor",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "textbook_explicit",
+          "rationale": "The textbook explicitly raises the head/trunk up to 45 degrees."
+        },
+        "legElevation": {
+          "degrees": 45,
+          "definition": "legElevationFromFloor",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "interpreted_textbook_instruction",
+          "rationale": "The wording groups legs with the simultaneous 45-degree trunk raise and asks that they not rise in an unparallel way. Equal 45-degree elevations are the chosen interpretation, not a separately stated leg angle."
+        },
+        "hip": {
+          "degrees": 90,
+          "definition": "hip",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "For trunk and legs each elevated 45 degrees on opposite sides of the hip, the interior angle is 180 - 45 - 45 = 90 degrees."
+        },
+        "knee": {
+          "degrees": 180,
+          "definition": "knee",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "The selected straight-leg supine boat variant uses extended legs, consistent with the supplied reference."
+        },
+        "elbow": {
+          "degrees": 180,
+          "definition": "elbow",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "geometric_translation",
+          "rationale": "The text explicitly asks for straight arms without elbow bending."
+        },
+        "shoulder": {
+          "degrees": null,
+          "definition": "shoulder",
+          "appliesTo": "both",
+          "preferredView": "side",
+          "basis": "not_numerically_specified",
+          "rationale": "Stretch and raise arms; NCERT supplies no floor-relative arm direction, so an exact shoulder degree is not implied."
+        }
+      },
+      "postureRules": [
+        "Begin supine with feet together; lift the straight legs and head/trunk simultaneously.",
+        "Keep arms stretched without bending the elbows and hold comfortably.",
+        "Lower the head/trunk, then legs and arms slowly."
+      ],
+      "notes": [
+        "The book mentions prone Naukasana but provides the supine instructions here; the catalog does not invent a prone variant.",
+        "The illustrative torso-to-floor target is a segment proxy, not a measurement of spinal curvature."
+      ]
+    }
+  ]
+}

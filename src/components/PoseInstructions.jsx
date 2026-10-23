@@ -1,0 +1,4 @@
+import React from 'react';
+import {poseImage,conflictingReferences} from '../assets.js';
+export function Reference({pose,side='both'}){return <figure className="pose-reference"><img className={side==='right'&&pose.requiresBothSides?'flipped':''} src={poseImage(pose)} alt={pose.variant}/><figcaption>{conflictingReferences.has(pose.id)?'Original photo differs from the textbook variant; follow the written instructions':'Pose reference'} · NCERT pp. {pose.source.textbook.printedPages.join(', ')}</figcaption></figure>;}
+export function PoseInstructions({pose,side}){return <><Reference pose={pose} side={side}/>{side!=='both'&&<p className="side-note">This round: <strong>{side} side</strong></p>}<ol className="instruction-list">{pose.postureRules.map(rule=><li key={rule}>{rule}</li>)}</ol><p className="note">Enter and leave the pose slowly. Stay within comfort, breathe naturally, and stop if anything hurts.</p></>;}
