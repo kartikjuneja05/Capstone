@@ -1,1 +1,0 @@
-These paper artifacts describe the earlier routine-specific calibration implementation. They are preserved as requested deliverables. The current app uses a shared five-movement ROM assessment; revise the methodology before submitting it as a description of this version.

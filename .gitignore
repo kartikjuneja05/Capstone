@@ -12,7 +12,7 @@ node_modules/
 /helpers/*
 
 # Personal explanations and paper documents
-/documentation/
+/local_documents/
 
 # Local environment settings (keep a shareable example)
 .env

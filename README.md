@@ -47,14 +47,14 @@ Original photos from `yoga_poses.zip` are displayed. Where a photo differs from 
 | `src/tools/` | Angle extraction and methodology PDF generation scripts |
 | `src/dist/` | Generated frontend build (ignored) |
 | `assets/` | Images and SVG references used by the app |
-| `documentation/` | Local personal explanations and paper documents (ignored) |
+| `local_documents/` | Local personal explanations and paper documents (ignored) |
 | `helpers/` | User-supplied reference materials such as screenshots and PDFs |
 
 Run npm commands from the project root. Package manifests, Vite configuration and the HTML entry point stay there. Installed dependencies and repository/tool metadata also remain at the root.
 
-Public and teammate-facing documents live at the root. Reserve `documentation/` for requested personal explanations and paper documents that are not uploaded to GitHub.
+The README lives at the root. Create `documentations/` when public or teammate-facing documents are needed. Reserve `local_documents/` for requested personal explanations and paper documents that are not uploaded to GitHub.
 
-The paper describes the earlier calibration design. Its generator is now `src/tools/build_methodology.py` and writes to `documentation/paper/`.
+The paper describes the earlier calibration design. Its generator is now `src/tools/build_methodology.py` and writes to `local_documents/paper/`.
 
 ## Persistence and limitations
 
