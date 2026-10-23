@@ -11,6 +11,9 @@ node_modules/
 # User-supplied reference materials
 /helpers/*
 
+# Personal explanations and paper documents
+/documentation/
+
 # Local environment settings (keep a shareable example)
 .env
 .env.*
